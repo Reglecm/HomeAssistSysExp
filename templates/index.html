@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>rgreger</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+    <script src="/static/main.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../static/main.css" />
+</head>
+
+<body>
+    <div class="containEr">
+        <div class="row w-100" id="header">
+            <div class="logoPlace col-md-10">
+                <div class="logoPlace offset-md-2"><img id="iLogo" alt="logo" src="/static/logo.png"></div>
+            </div>
+            <div id="status" class="d-flex col-md-2">
+
+                <div class="row h-100">
+                    <div class="col-sm-12 statusFill">
+                        <span class="badge badge-pill badge-info p-3">Status du Home Assistant
+                            <div class="statusColor"></div>
+                        </span>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-2">
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <a class="nav-link active" id="nav-capteur-tab" data-toggle="pill" href="#nav-capteur" role="tab"
+                        aria-controls="nav-capteur" aria-selected="true">Liste des capteurs</a>
+                    <a class="nav-link" id="nav-alerte-tab" data-toggle="pill" href="#nav-alerte" role="tab"
+                        aria-controls="nav-alerte" aria-selected="false">Gestion des alertes</a>
+                    <a class="nav-link" id="nav-configuration-tab" data-toggle="pill" href="#nav-configuration"
+                        role="tab" aria-controls="nav-configuration" aria-selected="false">Configuration</a>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="nav-capteur" role="tabpanel"
+                        aria-labelledby="nav-capteur-tab">
+                        <div class="container">
+                            <div class="mt-5 row">
+                                <h2>Liste des capteurs</h2>
+                            </div>
+                            <div class="mt-5 row">
+                                <div class="container">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th colspan="2">The table header</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>The table body</td>
+                                                <td>with two columns</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-alerte" role="tabpanel" aria-labelledby="nav-alerte-tab">
+
+                    </div>
+                    <div class="tab-pane fade" id="nav-configuration" role="tabpanel"
+                        aria-labelledby="nav-configuration-tab">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+
+
+</html>
