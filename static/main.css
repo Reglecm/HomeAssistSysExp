@@ -17,13 +17,19 @@
     margin-bottom: auto;
 }
 
-.statusColor{
+.statusColor {
     height: 15px;
     width: 15px;
-    margin: 1px;
+    margin: -3px 3px;
     background-color: red;
     border-radius: 50%;
     display: inline-block;
+    transition: transform .2s;
+    cursor: pointer;
+}
+
+.statusColor:hover {
+    transform: scale(1.5);
 }
 
 #iLogo {
