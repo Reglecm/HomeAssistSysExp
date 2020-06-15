@@ -1,16 +1,29 @@
-$('#myTab a').on('click', function (e) {
-    e.preventDefault()
-    $(this).tab('show')
-  })
+$(document).ready(function () {
 
+    GetStatus();
 
-
-$(document).ready(function(){
-
-
-    $('body').on('click', (state) => {
-        
-        $('.statusColor').css('background-color',state)
+    $('#myTab a').on('click', function (e) {
+        e.preventDefault()
+        $(this).tab('show')
     })
 
+
+    $('.statusColor').on('click', (state) => {
+        GetStatus();
+    })
+
+    $('#iLogo').on('click', (state) => {
+        LightToggle();
+    })
+
+    $('#LightOn').on('click', (state) => {
+        LightOn();
+    })
+
+    $('#LampId').on('click', (state) => {
+        GetLampId();
+    })
+
+    
+    
 })
