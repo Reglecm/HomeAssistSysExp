@@ -29,3 +29,11 @@ class API_Service:
             'color_name': color
         }
         return HA_POST(url, data)
+
+    def POST_Notification(message, title):
+        notif = {
+            'message': message,
+            'title': title
+        }
+        url = 'services/persistent_notification/create'
+        return HA_POST(url, notif)

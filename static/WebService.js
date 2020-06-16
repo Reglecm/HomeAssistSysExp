@@ -81,25 +81,47 @@ GetLampId = () => {
     })
 }
 
+POST_Notification = (title, message) => {
+    $.ajax({
+        type: 'POST',
+        url: '/webService',
+        data: JSON.stringify({
+            'do': 'POST_Notification',
+            'params': {
+                'message': message,
+                'title': title
+            }
+        }),
+        contentType: 'application/json',
+        dataType: 'JSON',
+        success: (result) => {
+            console.log(result); //PUSH NOTIF
+        },
+        error: (result) => {
+            console.log("erreur webservice", result); //PUSH NOTIF
+        }
+    })
+}
+
 
 
 // BasicPost = () => {
-    // $.ajax({
-        // type: 'POST',
-        // url: '/webService',
-        // data: JSON.stringify({
-            // 'do': 'FunctionName',
-            // 'params': {
-                // 'a': 'b'
-            // }
-        // }),
-        // contentType: 'application/json',
-        // dataType: 'JSON',
-        // success: (result) => {
-            // console.log(result); //PUSH NOTIF
-        // },
-        // error: (result) => {
-            // console.log("erreur webservice", result); //PUSH NOTIF
-        // }
-    // })
+// $.ajax({
+// type: 'POST',
+// url: '/webService',
+// data: JSON.stringify({
+// 'do': 'FunctionName',
+// 'params': {
+// 'a': 'b'
+// }
+// }),
+// contentType: 'application/json',
+// dataType: 'JSON',
+// success: (result) => {
+// console.log(result); //PUSH NOTIF
+// },
+// error: (result) => {
+// console.log("erreur webservice", result); //PUSH NOTIF
+// }
+// })
 // }
