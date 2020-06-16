@@ -24,7 +24,7 @@
 </head>
 
 <body>
-    <div class="row w-100" id="header">
+    <div class="row" id="header">
         <div class="logoPlace col-md-10">
             <div class="logoPlace offset-md-2"><img id="iLogo" alt="logo" src="/static/logo.png"></div>
         </div>
@@ -33,16 +33,16 @@
             <div class="row h-100">
                 <div class="col-sm-12 statusFill">
                     <span class="badge badge-pill badge-info p-3">Status du Home Assistant
-                        <div class="statusColor hoverable"></div>
+                        <div id="HaStatus" class="hoverable statusColor"></div>
                     </span>
                 </div>
             </div>
         </div>
     </div>
     <div id="buttonBoard" class="row">
-        <div class="col">
-            <button id="LightOn">Lampe On</button>
-            <button id="LampId">Lampe Id</button>
+        <div class="col-md-2 offset-md-10 d-flex justify-content-end">
+            <button id="LightOn" class="btn btn-dark">Lampe On</button>
+            <button id="LampId" class="btn btn-dark">Lampe Id</button>
         </div>
     </div>
     <div class="row mt-3">
@@ -61,24 +61,14 @@
                 <div class="tab-pane fade show active" id="nav-capteur" role="tabpanel"
                     aria-labelledby="nav-capteur-tab">
                     <div class="container">
-                        <div class="mt-5 row">
-                            <h2>Liste des capteurs</h2>
-                        </div>
-                        <div class="mt-5 row">
-                            <div class="container">
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th colspan="2">The table header</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>The table body</td>
-                                            <td>with two columns</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                        <div class="col-md-10">
+                            <div class="mt-5 row">
+                                <h2>Liste des capteurs</h2>
+                            </div>
+                            <div class="mt-5 row">
+                                <div class="container">
+                                    <ul id="objectsList"></ul>
+                                </div>
                             </div>
                         </div>
                     </div>

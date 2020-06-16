@@ -1,5 +1,5 @@
-GetStatus = () => {
-    $('.statusColor').css('background-color', 'orange');
+const GetStatus = () => {
+    $('#HaStatus').css('background-color', 'orange');
     $.ajax({
         type: 'GET',
         url: '/webService',
@@ -10,7 +10,7 @@ GetStatus = () => {
         success: (result) => {
             var state = result.message;
             console.log(state);
-            $('.statusColor').css('background-color', state.includes('API running') ? 'green' : 'red');
+            $('#HaStatus').css('background-color', state.includes('API running') ? 'green' : 'red');
         },
         error: () => {
             console.log("Home Assistant is unreachable");
@@ -18,7 +18,7 @@ GetStatus = () => {
     })
 }
 
-LightToggle = () => {
+const LightToggle = () => {
     $.ajax({
         type: 'GET',
         url: '/webService',
@@ -36,7 +36,7 @@ LightToggle = () => {
 }
 
 
-LightOn = () => {
+const LightOn = () => {
     $.ajax({
         type: 'POST',
         url: '/webService',
@@ -60,7 +60,7 @@ LightOn = () => {
     })
 }
 
-GetLampId = () => {
+const GetLampId = () => {
     $.ajax({
         type: 'POST',
         url: '/webService',
@@ -81,7 +81,7 @@ GetLampId = () => {
     })
 }
 
-POST_Notification = (title, message) => {
+const POST_Notification = (title, message) => {
     $.ajax({
         type: 'POST',
         url: '/webService',
@@ -104,24 +104,59 @@ POST_Notification = (title, message) => {
 }
 
 
+const GetAllObjects = () => {
+    return $.ajax({
+        type: 'GET',
+        url: '/webService',
+        data: {
+            'do': 'GET_API_States'
+        },
+        dataType: 'JSON',
+        error: (result) => {
+            console.log("erreur webservice", result); //PUSH NOTIF
+        }
+    })
+}
 
-// BasicPost = () => {
-// $.ajax({
-// type: 'POST',
-// url: '/webService',
-// data: JSON.stringify({
-// 'do': 'FunctionName',
-// 'params': {
-// 'a': 'b'
-// }
-// }),
-// contentType: 'application/json',
-// dataType: 'JSON',
-// success: (result) => {
-// console.log(result); //PUSH NOTIF
-// },
-// error: (result) => {
-// console.log("erreur webservice", result); //PUSH NOTIF
-// }
-// })
-// }
+
+/*
+BasicPost = () => {
+    $.ajax({
+        type: 'POST',
+        url: '/webService',
+        data: JSON.stringify({
+            'do': 'FunctionName',
+            'params': {
+                'a': 'b'
+            }
+        }),
+        contentType: 'application/json',
+        dataType: 'JSON',
+        success: (result) => {
+            console.log(result); //PUSH NOTIF
+        },
+        error: (result) => {
+            console.log("erreur webservice", result); //PUSH NOTIF
+        }
+    })
+}
+*/
+
+/*
+BasicGet = () => {
+    $.ajax({
+        type: 'GET',
+        url: '/webService',
+        data: {
+            'do': 'FunctionName'
+        },
+        dataType: 'JSON',
+        success: (result) => {
+            console.log(result); //PUSH NOTIF
+        },
+        error: (result) => {
+            console.log("erreur webservice", result); //PUSH NOTIF
+        }
+    })
+}
+*/
