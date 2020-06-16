@@ -13,7 +13,7 @@ def HA_GET(apiURL):
         "content-type": "application/json", }
     response = get(url, headers=headers)
     print(response.text)
-    return response.text
+    return json.dumps(json.loads(response.text))
 
 
 def HA_POST(apiURL, data):
@@ -25,4 +25,4 @@ def HA_POST(apiURL, data):
     }
     response = post(url, headers=headers, data=json.dumps(data))
     print(response.text)
-    return response.text
+    return json.dumps(json.loads(response.text))

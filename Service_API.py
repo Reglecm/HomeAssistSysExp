@@ -29,20 +29,3 @@ class API_Service:
             'color_name': color
         }
         return HA_POST(url, data)
-
-
-# def POST_Notification():
-#    url = "http://192.168.2.151:8123/persistent_notification/create"
-#    headers = {
-#        "Authorization": "Bearer " + token,
-#        "content-type": "application/json", }
-#    response = post(url, headers=headers)
-#    print(response.text)
-
-
-# POST_LightToggle()
-# POST_LightOn()
-
-# GET_API_Service()
-
-# POST_Notification()
