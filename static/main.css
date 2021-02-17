@@ -1,4 +1,5 @@
-body,html{
+html {
+    height:calc(100vw - 80%);
     overflow-x: hidden;
 }
 
@@ -30,10 +31,11 @@ body,html{
     display: inline-block;
 }
 
-.hoverable{
+.hoverable {
     transition: transform .2s;
     cursor: pointer;
 }
+
 .hoverable:hover {
     transform: scale(1.5);
 }
@@ -41,7 +43,7 @@ body,html{
 #iLogo {
     border-radius: 20%;
     width: 25%;
-    margin: 1em;    
+    margin: 1em;
 }
 
 #status {
